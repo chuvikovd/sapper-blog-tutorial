@@ -4,4 +4,4 @@
 
 <h1>About this site</h1>
 
-<p>This is the 'about' page. There's not much here.</p>
+<p class="text-4xl">This is the 'about' page. There's not much here.</p>

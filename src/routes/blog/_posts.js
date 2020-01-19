@@ -76,8 +76,8 @@ const posts = fs
   })
 
 posts.sort((a, b) => {
-  const dateA = new Date(a.date)
-  const dateB = new Date(b.date)
+  const dateA = new Date(a.created)
+  const dateB = new Date(b.created)
 
   if (dateA > dateB) return -1
   if (dateA < dateB) return 1

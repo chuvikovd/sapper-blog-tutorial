@@ -1,46 +1,40 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script context="module">
+  export function preload({ params, query }) {
+    return this.fetch(`blog/latest.json`)
+      .then(r => r.json())
+      .then(posts => {
+        return { posts };
+      });
+  }
+</script>
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
+<script>
+  import Item from "../components/Item.svelte"
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+  export let posts;
+</script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<div class="py-24">
+  <h1 class="font-bold text-6xl mb-4">Hi.</h1>
+  <p class="text-xl">
+    I'm Blog. Today I show how to create a static Svelte blog using TailwindCSS.
+    Check out my page to learn this and other interesting stuff.
+  </p>
+</div>
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
+<div class="border-b border-black flex justify-between items-center pb-2">
+  <strong class="text-3xl">Latest Posts</strong>
+  <a class="text-gray-600 hover:text-gray-800 hover:underline" href="/blog">
+    Read all posts
+  </a>
+</div>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<div class="mb-6">
+  {#each posts as post}
+    <Item {post} />
+  {/each}
+</div>

@@ -1,0 +1,5 @@
+@import 'tailwind';
+/* purgecss start ignore */
+@import 'prismjs/themes/prism';
+/* purgecss end ignore */
+@import "markdown";
