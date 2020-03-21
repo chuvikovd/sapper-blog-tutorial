@@ -2,6 +2,7 @@
 title: How can I get involved?
 description: First post in this blog
 created: '2020-01-11T19:45:28.107Z'
+categories: ['Sapper', 'Contributing']
 ---
 
 We're so glad you asked!

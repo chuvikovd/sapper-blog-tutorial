@@ -2,6 +2,7 @@
 title: How is Sapper different from Next.js?
 description: Differences between Sapper and Next.js. Framework comparison.
 created: '2020-01-11T19:46:28.107Z'
+categories: ['Sapper']
 ---
 
 [Next.js](https://github.com/zeit/next.js) is a React framework from [Zeit](https://zeit.co'), and is the inspiration for Sapper.

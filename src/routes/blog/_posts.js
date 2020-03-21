@@ -2,7 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const marked = require('marked')
 const matter = require('gray-matter')
-const formatDate = require('date-fns/format')
 const readingTime = require('reading-time')
 const prism = require('prismjs')
 
@@ -51,7 +50,7 @@ const posts = fs
   .map(fileName => {
     const fileMd = fs.readFileSync(path.join(POSTS_DIR, fileName), 'utf8')
     const { data, content: rawContent } = matter(fileMd)
-    const { title, description, created, updated } = data
+    const { title, description, created, updated, categories } = data
     const slug = fileName.split('.')[0]
     let content = rawContent
     let excerpt = ''
@@ -70,6 +69,7 @@ const posts = fs
       html,
       created,
       updated,
+      categories,
       excerpt,
       readingTime: time,
     }

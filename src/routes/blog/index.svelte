@@ -2,16 +2,17 @@
   export function preload({ params, query }) {
     return this.fetch(`blog.json`)
       .then(r => r.json())
-      .then(posts => {
-        return { posts };
+      .then(({ posts, hasMore }) => {
+        return { posts, hasMore };
       });
   }
 </script>
 
 <script>
   import Item from "../../components/Item.svelte";
+  import Pagination from "../../components/Pagination.svelte";
 
-  export let posts;
+  export let posts, hasMore;
 </script>
 
 <svelte:head>
@@ -23,3 +24,5 @@
     <Item {post} />
   {/each}
 </div>
+
+<Pagination prevLink={hasMore ? 'blog/page/2' : null} />

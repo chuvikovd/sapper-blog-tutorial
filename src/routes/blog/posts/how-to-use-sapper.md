@@ -2,6 +2,7 @@
 title: How to use Sapper
 description: Short tutorial on how to get started with Sapper
 created: '2020-01-11T19:48:28.107Z'
+categories: ['Sapper']
 ---
 
 Short tutorial on how to get started with Sapper

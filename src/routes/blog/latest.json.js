@@ -6,7 +6,8 @@ const contents = JSON.stringify(
       title: post.title,
       slug: post.slug,
       created: post.created,
-      excerpt: post.excerpt
+      excerpt: post.excerpt,
+      categories: post.categories
     };
   })
 );
